@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary": "#904d00",
+            "secondary-container": "#fd8b00",
+            "surface-container-low": "#f3f3f3",
+            "primary-fixed-dim": "#aec7f6",
+            "primary": "#000a1e",
+            "surface-bright": "#f9f9f9",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#e2e2e2",
+            "inverse-primary": "#aec7f6",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#341100",
+            "inverse-on-surface": "#f1f1f1",
+            "outline-variant": "#c4c6cf",
+            "inverse-surface": "#2f3131",
+            "surface-dim": "#dadada",
+            "on-secondary-fixed-variant": "#6e3900",
+            "surface-container-high": "#e8e8e8",
+            "surface-container": "#eeeeee",
+            "tertiary-fixed-dim": "#ffb691",
+            "secondary-fixed": "#ffdcc3",
+            "surface-tint": "#465f88",
+            "tertiary-fixed": "#ffdbcb",
+            "on-tertiary-container": "#b97958",
+            "on-secondary-container": "#603100",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#180500",
+            "error": "#ba1a1a",
+            "on-secondary-fixed": "#2f1500",
+            "primary-container": "#002147",
+            "outline": "#74777f",
+            "tertiary-container": "#3d1500",
+            "background": "#f9f9f9",
+            "on-primary-fixed-variant": "#2d476f",
+            "error-container": "#ffdad6",
+            "surface": "#f9f9f9",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#ffb77d",
+            "on-tertiary-fixed-variant": "#6c391d",
+            "on-background": "#1a1c1c",
+            "on-secondary": "#ffffff",
+            "on-surface": "#1a1c1c",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#001b3d",
+            "primary-fixed": "#d6e3ff",
+            "on-surface-variant": "#44474e",
+            "surface-variant": "#e2e2e2",
+            "on-primary-container": "#708ab5"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: max(884px, 100dvh);
+    }
+
+    .industrial-gradient {
+      background: linear-gradient(135deg, #000a1e 0%, #002147 100%);
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal-step {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-step.visible, .reveal-scale.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .reveal-delay-1 { transition-delay: 150ms; }
+    .reveal-delay-2 { transition-delay: 300ms; }
+    .reveal-delay-3 { transition-delay: 450ms; }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface">
+  <!-- TopAppBar -->
+  <header
+    class="bg-slate-50 dark:bg-slate-950 flex justify-between items-center w-full px-8 py-4 max-w-full sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <img src="./logo.png" alt="Fich Global Logo" class="h-10 md:h-12 w-auto object-contain drop-shadow-sm" />
+      <span class="text-2xl font-black uppercase tracking-tighter text-blue-900 dark:text-blue-100">FICH GLOBAL</span>
+    </div>
+    <nav class="hidden md:flex gap-8 items-center">
+      <a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 font-['Inter'] font-bold tracking-tight transition-colors duration-200"
+        href="index.html">Homepage</a>
+      <a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 font-['Inter'] font-bold tracking-tight transition-colors duration-200"
+        href="contact.html">Contact Us</a>
+      <a class="text-blue-900 dark:text-blue-400 border-b-2 border-orange-600 pb-1 font-['Inter'] font-bold tracking-tight"
+        href="industries.html">Industries</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a class="hidden lg:flex items-center gap-2 text-blue-900 dark:text-blue-100 font-bold text-sm tracking-tight hover:text-orange-600 transition-colors"
+        href="mailto:customerservice@fichglobalsupply.com"><span
+          class="material-symbols-outlined text-base">mail</span>customerservice@fichglobalsupply.com</a>
+      <a class="bg-secondary hover:bg-secondary-container text-on-secondary px-6 py-2 font-['Inter'] font-bold tracking-tight transition-transform active:scale-95 inline-block text-center"
+        href="contact.html">GET QUOTE</a>
+    </div>
+  </header>
+  <div class="bg-slate-200 dark:bg-slate-800 h-[1px] w-full"></div>
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-[#000a1e] pt-44 pb-36 px-8 border-b border-slate-200 overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img src="./industries_hero_bg.png" alt="Industrial Architecture" class="w-full h-full object-cover grayscale-[20%] object-[50%_70%] scale-105">
+      </div>
+      <!-- Subtle Dark Overlay for Text Contrast -->
+      <div class="absolute inset-0 z-0 bg-gradient-to-t from-[#000a1e]/80 via-[#000a1e]/40 to-[#000a1e]/30 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0zOSAzOUwwIDM5TTAgMEwwIDM5IiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==')] z-0 pointer-events-none opacity-50"></div>
+
+      <div class="max-w-7xl mx-auto relative z-10 text-center">
+        <div class="inline-flex items-center gap-3 mb-6 reveal-step">
+          <span class="w-1.5 h-1.5 bg-secondary animate-pulse shadow-[0_0_10px_rgba(253,139,0,0.8)]"></span>
+          <span class="text-secondary font-black tracking-[0.3em] uppercase text-xs drop-shadow-[0_4px_4px_rgba(0,0,0,1)]">Vertical Expertise</span>
+          <span class="w-1.5 h-1.5 bg-secondary animate-pulse shadow-[0_0_10px_rgba(253,139,0,0.8)]"></span>
+        </div>
+        <h1 class="text-6xl md:text-8xl text-white font-black uppercase tracking-tight mb-6 drop-shadow-[0_10px_20px_rgba(0,0,0,1)] reveal-step reveal-delay-1">Our Expertise</h1>
+        <div class="h-1 w-40 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto mb-8 reveal-step reveal-delay-2 drop-shadow-[0_2px_4px_rgba(0,0,0,1)]"></div>
+        <p class="text-2xl text-white max-w-3xl mx-auto font-bold leading-relaxed reveal-step reveal-delay-3 drop-shadow-[0_8px_15px_rgba(0,0,0,1)]">B2B supply chain solutions engineered to millimeter precision for specific vertical requirements.</p>
+      </div>
+    </section>
+
+    <!-- Block 1: Industrial Electronics -->
+    <section class="py-28 bg-white relative overflow-hidden group/section">
+      <div class="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+      <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div class="relative">
+          <div class="absolute -left-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-secondary/20 to-transparent hidden lg:block"></div>
+          
+          <div class="reveal-step w-20 h-20 rounded-none bg-slate-50 flex items-center justify-center border border-slate-200 mb-8 group-hover/section:border-secondary transition-colors duration-700 hover:bg-slate-100 shadow-sm">
+            <span class="material-symbols-outlined text-5xl text-secondary drop-shadow-sm">memory</span>
+          </div>
+          <h2 class="reveal-step reveal-delay-1 text-4xl font-black text-slate-900 uppercase mb-6 tracking-tight drop-shadow-sm">Industrial Electronics</h2>
+          <p class="reveal-step reveal-delay-2 text-lg text-slate-600 leading-relaxed mb-10 font-medium">
+            Precision logistics designed for high-value components. Our infrastructure guarantees secure, temperature and humidity-controlled transit, minimizing variance and protecting delicate electronic freight across all touchpoints.
+          </p>
+          <ul class="space-y-5 reveal-step reveal-delay-3">
+            <li class="flex items-center gap-4 group/item hover:translate-x-2 transition-transform duration-300 cursor-default">
+              <span class="material-symbols-outlined text-secondary/70 group-hover/item:text-secondary group-hover/item:drop-shadow-[0_0_5px_rgba(253,139,0,0.4)] transition-all">cable</span>
+              <span class="text-slate-700 font-bold tracking-wide uppercase text-sm group-hover/item:text-slate-900 transition-colors">Complete ESD-Controlled Handling protocols</span>
+            </li>
+            <li class="flex items-center gap-4 group/item hover:translate-x-2 transition-transform duration-300 cursor-default">
+               <span class="material-symbols-outlined text-secondary/70 group-hover/item:text-secondary group-hover/item:drop-shadow-[0_0_5px_rgba(253,139,0,0.4)] transition-all">bolt</span>
+              <span class="text-slate-700 font-bold tracking-wide uppercase text-sm group-hover/item:text-slate-900 transition-colors">Just-In-Time Component Delivery integration</span>
+            </li>
+            <li class="flex items-center gap-4 group/item hover:translate-x-2 transition-transform duration-300 cursor-default">
+               <span class="material-symbols-outlined text-secondary/70 group-hover/item:text-secondary group-hover/item:drop-shadow-[0_0_5px_rgba(253,139,0,0.4)] transition-all">blur_on</span>
+              <span class="text-slate-700 font-bold tracking-wide uppercase text-sm group-hover/item:text-slate-900 transition-colors">Clean-room staging and consolidation</span>
+            </li>
+          </ul>
+        </div>
+        <div class="relative h-[550px] group/img reveal-scale">
+          <!-- Glassmorphism Container -->
+          <div class="absolute inset-0 border border-slate-200 bg-white/50 backdrop-blur-sm p-4 transform group-hover/img:-translate-y-2 transition-transform duration-700 shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
+            <div class="absolute inset-0 bg-gradient-to-tr from-secondary/5 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-700 z-10 pointer-events-none mix-blend-overlay"></div>
+            <img src="./img_electronics.png" alt="Industrial Electronics" class="w-full h-full object-cover grayscale-[20%] group-hover/img:grayscale-0 transition-all duration-700 shadow-inner">
+            <!-- decorative corners -->
+            <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-secondary transition-all group-hover/img:border-primary"></div>
+            <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-secondary transition-all group-hover/img:border-primary"></div>
+            <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-secondary transition-all group-hover/img:border-primary"></div>
+            <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-secondary transition-all group-hover/img:border-primary"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Block 2: General Merchandise -->
+    <section class="py-28 bg-slate-50 relative overflow-hidden group/section">
+      <div class="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+      <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div class="order-2 lg:order-1 relative h-[550px] group/img reveal-scale">
+          <!-- Glassmorphism Container -->
+          <div class="absolute inset-0 border border-slate-200 bg-white/50 backdrop-blur-sm p-4 transform group-hover/img:-translate-y-2 transition-transform duration-700 shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
+            <div class="absolute inset-0 bg-gradient-to-tr from-secondary/5 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-700 z-10 pointer-events-none mix-blend-overlay"></div>
+            <img src="./img_general.png" alt="General Merchandise" class="w-full h-full object-cover grayscale-[20%] group-hover/img:grayscale-0 transition-all duration-700 shadow-inner">
+            <!-- decorative corners -->
+            <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-secondary transition-all group-hover/img:border-primary"></div>
+            <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-secondary transition-all group-hover/img:border-primary"></div>
+            <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-secondary transition-all group-hover/img:border-primary"></div>
+            <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-secondary transition-all group-hover/img:border-primary"></div>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2 relative">
+          <div class="absolute -right-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-secondary/20 to-transparent hidden lg:block"></div>
+          
+          <div class="reveal-step w-20 h-20 rounded-none bg-white flex items-center justify-center border border-slate-200 mb-8 group-hover/section:border-secondary transition-colors duration-700 shadow-sm">
+            <span class="material-symbols-outlined text-5xl text-secondary drop-shadow-sm">inventory_2</span>
+          </div>
+          <h2 class="reveal-step reveal-delay-1 text-4xl font-black text-slate-900 uppercase mb-6 tracking-tight drop-shadow-sm">General Merchandise</h2>
+          <p class="reveal-step reveal-delay-2 text-lg text-slate-600 leading-relaxed mb-10 font-medium">
+            High-volume retail supply chains require scale and immediate agility. We provide massive regional fulfillment capability supported by real-time WMS visibility to keep consumer markets fully stocked year-round.
+          </p>
+          <ul class="space-y-5 reveal-step reveal-delay-3">
+            <li class="flex items-center gap-4 group/item hover:translate-x-2 transition-transform duration-300 cursor-default">
+              <span class="material-symbols-outlined text-secondary/70 group-hover/item:text-secondary group-hover/item:drop-shadow-[0_0_5px_rgba(253,139,0,0.4)] transition-all">barcode_scanner</span>
+              <span class="text-slate-700 font-bold tracking-wide uppercase text-sm group-hover/item:text-slate-900 transition-colors">Mass Retail Supply network distribution</span>
+            </li>
+            <li class="flex items-center gap-4 group/item hover:translate-x-2 transition-transform duration-300 cursor-default">
+               <span class="material-symbols-outlined text-secondary/70 group-hover/item:text-secondary group-hover/item:drop-shadow-[0_0_5px_rgba(253,139,0,0.4)] transition-all">all_out</span>
+              <span class="text-slate-700 font-bold tracking-wide uppercase text-sm group-hover/item:text-slate-900 transition-colors">High-Volume fulfillment operations</span>
+            </li>
+            <li class="flex items-center gap-4 group/item hover:translate-x-2 transition-transform duration-300 cursor-default">
+               <span class="material-symbols-outlined text-secondary/70 group-hover/item:text-secondary group-hover/item:drop-shadow-[0_0_5px_rgba(253,139,0,0.4)] transition-all">timeline</span>
+              <span class="text-slate-700 font-bold tracking-wide uppercase text-sm group-hover/item:text-slate-900 transition-colors">Seasonal demand spike inventory management</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Block 3: Construction & Hardware -->
+    <section class="py-28 bg-white relative overflow-hidden group/section">
+      <div class="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+      <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div class="relative">
+          <div class="absolute -left-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-secondary/20 to-transparent hidden lg:block"></div>
+          
+          <div class="reveal-step w-20 h-20 rounded-none bg-slate-50 flex items-center justify-center border border-slate-200 mb-8 group-hover/section:border-secondary transition-colors duration-700 hover:bg-slate-100 shadow-sm">
+            <span class="material-symbols-outlined text-5xl text-secondary drop-shadow-sm">precision_manufacturing</span>
+          </div>
+          <h2 class="reveal-step reveal-delay-1 text-4xl font-black text-slate-900 uppercase mb-6 tracking-tight drop-shadow-sm">Construction & Hardware</h2>
+          <p class="reveal-step reveal-delay-2 text-lg text-slate-600 leading-relaxed mb-10 font-medium">
+            Deploying heavy-duty assets with military precision. Our flatbed operations and bulk material sourcing networks ensure construction sites receive primary structural materials on schedule, avoiding costly delays.
+          </p>
+          <ul class="space-y-5 reveal-step reveal-delay-3">
+            <li class="flex items-center gap-4 group/item hover:translate-x-2 transition-transform duration-300 cursor-default">
+              <span class="material-symbols-outlined text-secondary/70 group-hover/item:text-secondary group-hover/item:drop-shadow-[0_0_5px_rgba(253,139,0,0.4)] transition-all">local_shipping</span>
+              <span class="text-slate-700 font-bold tracking-wide uppercase text-sm group-hover/item:text-slate-900 transition-colors">Heavy-Duty material distribution logistics</span>
+            </li>
+            <li class="flex items-center gap-4 group/item hover:translate-x-2 transition-transform duration-300 cursor-default">
+               <span class="material-symbols-outlined text-secondary/70 group-hover/item:text-secondary group-hover/item:drop-shadow-[0_0_5px_rgba(253,139,0,0.4)] transition-all">my_location</span>
+              <span class="text-slate-700 font-bold tracking-wide uppercase text-sm group-hover/item:text-slate-900 transition-colors">Direct-to-site structural deliveries</span>
+            </li>
+            <li class="flex items-center gap-4 group/item hover:translate-x-2 transition-transform duration-300 cursor-default">
+               <span class="material-symbols-outlined text-secondary/70 group-hover/item:text-secondary group-hover/item:drop-shadow-[0_0_5px_rgba(253,139,0,0.4)] transition-all">language</span>
+              <span class="text-slate-700 font-bold tracking-wide uppercase text-sm group-hover/item:text-slate-900 transition-colors">Bulk global material sourcing and import</span>
+            </li>
+          </ul>
+        </div>
+        <div class="relative h-[550px] group/img reveal-scale">
+          <!-- Glassmorphism Container -->
+          <div class="absolute inset-0 border border-slate-200 bg-white/50 backdrop-blur-sm p-4 transform group-hover/img:-translate-y-2 transition-transform duration-700 shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
+            <div class="absolute inset-0 bg-gradient-to-tr from-secondary/5 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-700 z-10 pointer-events-none mix-blend-overlay"></div>
+            <img src="./img_construction.png" alt="Construction & Hardware" class="w-full h-full object-cover grayscale-[20%] group-hover/img:grayscale-0 transition-all duration-700 shadow-inner">
+            <!-- decorative corners -->
+            <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-secondary transition-all group-hover/img:border-primary"></div>
+            <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-secondary transition-all group-hover/img:border-primary"></div>
+            <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-secondary transition-all group-hover/img:border-primary"></div>
+            <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-secondary transition-all group-hover/img:border-primary"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Block 4: Commercial Supplies -->
+    <section class="py-28 bg-slate-50 relative overflow-hidden group/section">
+      <div class="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+      <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div class="order-2 lg:order-1 relative h-[550px] group/img reveal-scale">
+          <!-- Glassmorphism Container -->
+          <div class="absolute inset-0 border border-slate-200 bg-white/50 backdrop-blur-sm p-4 transform group-hover/img:-translate-y-2 transition-transform duration-700 shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
+            <div class="absolute inset-0 bg-gradient-to-tr from-secondary/5 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-700 z-10 pointer-events-none mix-blend-overlay"></div>
+            <img src="./img_commercial.png" alt="Commercial Supplies" class="w-full h-full object-cover grayscale-[20%] group-hover/img:grayscale-0 transition-all duration-700 shadow-inner">
+            <!-- decorative corners -->
+            <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-secondary transition-all group-hover/img:border-primary"></div>
+            <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-secondary transition-all group-hover/img:border-primary"></div>
+            <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-secondary transition-all group-hover/img:border-primary"></div>
+            <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-secondary transition-all group-hover/img:border-primary"></div>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2 relative">
+          <div class="absolute -right-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-secondary/20 to-transparent hidden lg:block"></div>
+          
+          <div class="reveal-step w-20 h-20 rounded-none bg-white flex items-center justify-center border border-slate-200 mb-8 group-hover/section:border-secondary transition-colors duration-700 shadow-sm">
+            <span class="material-symbols-outlined text-5xl text-secondary drop-shadow-sm">domain</span>
+          </div>
+          <h2 class="reveal-step reveal-delay-1 text-4xl font-black text-slate-900 uppercase mb-6 tracking-tight drop-shadow-sm">Commercial Supplies</h2>
+          <p class="reveal-step reveal-delay-2 text-lg text-slate-600 leading-relaxed mb-10 font-medium">
+            Continuous enterprise operation requires flawless backend support. We manage large-scale contract procurement, delivering standardized office and operational supplies to multi-location businesses nationwide.
+          </p>
+          <ul class="space-y-5 reveal-step reveal-delay-3">
+            <li class="flex items-center gap-4 group/item hover:translate-x-2 transition-transform duration-300 cursor-default">
+              <span class="material-symbols-outlined text-secondary/70 group-hover/item:text-secondary group-hover/item:drop-shadow-[0_0_5px_rgba(253,139,0,0.4)] transition-all">handshake</span>
+              <span class="text-slate-700 font-bold tracking-wide uppercase text-sm group-hover/item:text-slate-900 transition-colors">Enterprise-grade procurement agreements</span>
+            </li>
+            <li class="flex items-center gap-4 group/item hover:translate-x-2 transition-transform duration-300 cursor-default">
+               <span class="material-symbols-outlined text-secondary/70 group-hover/item:text-secondary group-hover/item:drop-shadow-[0_0_5px_rgba(253,139,0,0.4)] transition-all">hub</span>
+              <span class="text-slate-700 font-bold tracking-wide uppercase text-sm group-hover/item:text-slate-900 transition-colors">Multi-location coordinated distribution</span>
+            </li>
+            <li class="flex items-center gap-4 group/item hover:translate-x-2 transition-transform duration-300 cursor-default">
+               <span class="material-symbols-outlined text-secondary/70 group-hover/item:text-secondary group-hover/item:drop-shadow-[0_0_5px_rgba(253,139,0,0.4)] transition-all">developer_board</span>
+              <span class="text-slate-700 font-bold tracking-wide uppercase text-sm group-hover/item:text-slate-900 transition-colors">Automated contract inventory management</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Call to Action Slab -->
+    <section class="py-24 bg-white relative overflow-hidden border-b border-slate-200">
+      <!-- Glow under CTA -->
+      <div class="absolute bottom-[-100px] right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
+
+      <div
+        class="max-w-5xl mx-auto px-8 bg-[#002147] text-white p-16 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden rounded-2xl shadow-2xl reveal-scale border border-slate-700 group">
+        <!-- Glowing animated background inside CTA -->
+        <div class="absolute inset-0 bg-gradient-to-r from-secondary/20 via-transparent to-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] pointer-events-none z-0"></div>
+
+        <div class="text-center md:text-left relative z-10 hidden lg:block">
+           <span class="material-symbols-outlined text-6xl text-secondary/30 mb-2">rocket_launch</span>
+        </div>
+
+        <div class="text-center md:text-left relative z-10 flex-1">
+          <h2 class="text-3xl font-black uppercase mb-4 drop-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-200 tracking-tight">Ready to Optimize Your <br />Industry Supply Chain?</h2>
+          <p class="text-slate-300 font-medium">Consult with our logistics experts to architect a scalable solution.</p>
+        </div>
+        
+        <a class="relative z-10 bg-secondary-container text-primary px-12 py-6 text-xl font-black uppercase whitespace-nowrap hover:scale-105 transition-all duration-300 hover:shadow-[0_0_40px_rgba(253,139,0,0.6)] inline-flex items-center justify-center gap-3 rounded bg-gradient-to-br hover:from-secondary-container hover:to-white/90 border border-transparent hover:border-white/40 group/btn"
+          href="contact.html">
+          <span>Consultation Request</span>
+          <span class="material-symbols-outlined text-[24px] group-hover/btn:translate-x-1 group-hover/btn:scale-110 transition-all text-secondary group-hover/btn:text-primary">send</span>
+        </a>
+      </div>
+    </section>
+    
+    <!-- Global Scroll Reveal Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.1
+        };
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-step, .reveal-scale').forEach((el) => {
+          observer.observe(el);
+        });
+      });
+    </script>
+  </main>
+  <!-- Footer -->
+  <footer
+    class="bg-[#000a1e] text-white w-full px-8 md:px-12 py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative overflow-hidden border-t border-slate-800">
+    <div class="absolute inset-0 bg-gradient-to-t from-secondary/5 to-transparent pointer-events-none"></div>
+
+    <div class="md:col-span-1 relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl font-black uppercase tracking-tighter text-white">FICH GLOBAL</span>
+      </div>
+      <p class="text-slate-400 text-sm leading-relaxed mb-8 max-w-sm">
+        Specialized in high-scale industrial distribution and supply chain architecture across North America.
+      </p>
+      <div class="text-white font-bold text-[13px] tracking-widest uppercase flex items-center gap-2 group">
+        <span class="material-symbols-outlined text-secondary group-hover:scale-110 transition-transform">mail</span>
+        <a class="hover:text-secondary hover:underline underline-offset-4 transition-all"
+          href="mailto:customerservice@fichglobalsupply.com">customerservice@fichglobalsupply.com</a>
+      </div>
+    </div>
+    
+    <div class="relative z-10 md:ml-auto">
+      <h5 class="text-secondary font-black uppercase text-xs md:text-sm mb-8 tracking-[0.2em] flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary"></span> Solutions</h5>
+      <ul class="space-y-4">
+        <li><a class="text-slate-300 hover:text-white transition-all font-['Inter'] text-sm tracking-wide flex items-center gap-2 group hover:underline underline-offset-4" href="#"><span class="material-symbols-outlined text-[14px] text-slate-500 group-hover:text-secondary group-hover:translate-x-1 transition-all">chevron_right</span> Distribution Services</a></li>
+        <li><a class="text-slate-300 hover:text-white transition-all font-['Inter'] text-sm tracking-wide flex items-center gap-2 group hover:underline underline-offset-4" href="#"><span class="material-symbols-outlined text-[14px] text-slate-500 group-hover:text-secondary group-hover:translate-x-1 transition-all">chevron_right</span> Supply Chain Solutions</a></li>
+        <li><a class="text-slate-300 hover:text-white transition-all font-['Inter'] text-sm tracking-wide flex items-center gap-2 group hover:underline underline-offset-4" href="#"><span class="material-symbols-outlined text-[14px] text-slate-500 group-hover:text-secondary group-hover:translate-x-1 transition-all">chevron_right</span> Global Logistics</a></li>
+      </ul>
+    </div>
+    
+    <div class="relative z-10 md:mx-auto">
+      <h5 class="text-secondary font-black uppercase text-xs md:text-sm mb-8 tracking-[0.2em] flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary"></span> Company</h5>
+      <ul class="space-y-4">
+        <li><a class="text-slate-300 hover:text-white transition-all font-['Inter'] text-sm tracking-wide flex items-center gap-2 group hover:underline underline-offset-4" href="#"><span class="material-symbols-outlined text-[14px] text-slate-500 group-hover:text-secondary group-hover:translate-x-1 transition-all">chevron_right</span> Compliance</a></li>
+        <li><a class="text-slate-300 hover:text-white transition-all font-['Inter'] text-sm tracking-wide flex items-center gap-2 group hover:underline underline-offset-4" href="#"><span class="material-symbols-outlined text-[14px] text-slate-500 group-hover:text-secondary group-hover:translate-x-1 transition-all">chevron_right</span> Our Story</a></li>
+        <li><a class="text-slate-300 hover:text-white transition-all font-['Inter'] text-sm tracking-wide flex items-center gap-2 group hover:underline underline-offset-4" href="contact.html"><span class="material-symbols-outlined text-[14px] text-slate-500 group-hover:text-secondary group-hover:translate-x-1 transition-all">chevron_right</span> Contact Us</a></li>
+      </ul>
+    </div>
+    
+    <div class="relative z-10 lg:ml-auto">
+      <h5 class="text-secondary font-black uppercase text-xs md:text-sm mb-8 tracking-[0.2em] flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary"></span> Headquarters</h5>
+      <p class="text-slate-400 text-sm tracking-wide leading-relaxed mb-6 font-medium">
+        6010 W Spring Creek Pkwy<br/>
+        Suite #1016<br/>
+        Plano, TX 75024<br/>
+        United States
+      </p>
+      <div class="flex gap-4">
+        <a href="#" class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center border border-slate-700 hover:bg-secondary hover:border-secondary transition-all text-white group"><span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">language</span></a>
+        <a href="#" class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center border border-slate-700 hover:bg-secondary hover:border-secondary transition-all text-white group"><span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">share</span></a>
+      </div>
+    </div>
+    
+    <div class="md:col-span-2 lg:col-span-4 mt-16 pt-8 border-t border-slate-800 text-slate-500 text-[11px] sm:text-xs flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
+      <span class="font-medium tracking-wide text-center md:text-left">© 2024 Fich Global Supply LLC. All Rights Reserved.</span>
+      <div class="flex gap-4 md:gap-8 flex-wrap justify-center font-medium">
+        <a class="hover:text-secondary hover:underline underline-offset-4 transition-all" href="#">Privacy Policy</a>
+        <a class="hover:text-secondary hover:underline underline-offset-4 transition-all" href="#">Terms of Service</a>
+        <a class="hover:text-secondary hover:underline underline-offset-4 transition-all" href="#">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
